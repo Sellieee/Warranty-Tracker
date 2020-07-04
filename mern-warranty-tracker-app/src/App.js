@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {Navbar, Nav} from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "react-bootstrap/Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {Sidebar} from "./sidebar";
 
 import Car from "./Components/car";
 import Electronics from "./Components/electronics";
@@ -10,19 +11,20 @@ import HomeAppliances from "./Components/homeappliances";
 import Miscellaneous from "./Components/miscellaneous";
 
 class App extends Component {
+  showSettings(event){
+    event.preventDefault();
+  };
+
   render() {
     return (
       <Router>
         <div className="container">
-          <Navbar bg="dark" variant="dark">
+          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="/">Warranty Tracker</Navbar.Brand>
-            <Nav className="mr-auto">
-              <Nav.Link href="/car">Car</Nav.Link>
-              <Nav.Link href="/electronics">Electronics</Nav.Link>
-              <Nav.Link href="/furniture">Furniture</Nav.Link>
-              <Nav.Link href="/homeappliances">Home Appliances</Nav.Link>
-              <Nav.Link href="/Miscellaneous">Miscellaneous</Nav.Link>
-            </Nav>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Sidebar pageWrapId={"page-wrap"} outerContainerId="App" />
+            </Navbar.Collapse>
           </Navbar>
 
           {/* These routes are for separate web pages. 
