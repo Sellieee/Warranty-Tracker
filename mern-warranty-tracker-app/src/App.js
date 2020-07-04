@@ -17,12 +17,16 @@ class App extends Component {
         */}
         {/* Overview of existing Warranties */}
         <Route path="/" exact component={WarrantySummary} />
-        {/* Overview of existing Warranties */}
-        <Route path="/electronics" exact component={WarrantyElectronics} />
-        {/* Overview of existing Warranties */}
+        {/* Car and related Warranties */}
         <Route path="/car" exact component={WarrantyCar} />
-        {/* Overview of existing Warranties */}
+        {/* Electronics and related Warranties */}
+        <Route path="/electronics" exact component={WarrantyElectronics} />
+        {/* Furniture and related Warranties */}
+        <Route path="/furniture" exact component={WarrantyFurniture} />
+        {/* Home Appliances and related Warranties */}
         <Route path="/homeappliances" exact component={WarrantyHomeAppliances} />
+        {/* Miscellaneous/Uncategorised Warranties */}
+        <Route path="/miscellaneous" exact component={WarrantyMiscellaneous} />
       </Router>
     );
   }
