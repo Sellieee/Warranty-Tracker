@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import {Navbar, Nav} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Car from "./Components/car";
 import Electronics from "./Components/electronics";
@@ -13,28 +14,16 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">
-              Warranty Tracker
-              {/* <img src={logo} width="30" height="30" alt="logo" */}
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarToggleExternalContent"
-              aria-controls="navbarToggleExternalContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon white-text">
-                <i classname="fas fa-bars"></i>
-              </span>
-            </button>
-            {/* <Link to="/" className="navbar-brand">
-              Summary
-            </Link> */}
-          </nav>
+          <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="/">Warranty Tracker</Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link href="/car">Car</Nav.Link>
+              <Nav.Link href="/electronics">Electronics</Nav.Link>
+              <Nav.Link href="/furniture">Furniture</Nav.Link>
+              <Nav.Link href="/homeappliances">Home Appliances</Nav.Link>
+              <Nav.Link href="/Miscellaneous">Miscellaneous</Nav.Link>
+            </Nav>
+          </Navbar>
 
           {/* These routes are for separate web pages. 
   <Route path="/" exact component={WarrantySummary} />
