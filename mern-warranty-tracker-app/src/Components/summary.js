@@ -4,7 +4,7 @@ export default class Summary extends Component {
     render() {
         return(
             <div> 
-               <p>Warranty Summary</p> 
+               <p>Existing Warranties</p> 
             </div>
         );
     }
